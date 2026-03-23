@@ -7,14 +7,14 @@ from file_operations import copy_file, delete_path
 class TestFileOperations(unittest.TestCase):
 
     def setUp(self):
-        # Создаём временную директорию для тестов
+    
         self.test_dir = tempfile.mkdtemp()
         self.source_file = os.path.join(self.test_dir, "source.txt")
         with open(self.source_file, "w") as f:
             f.write("test content")
 
     def tearDown(self):
-        # Удаляем временную директорию
+    
         shutil.rmtree(self.test_dir, ignore_errors=True)
 
     def test_copy_file_to_file(self):
